@@ -1,6 +1,8 @@
 import axios from "axios";
+
 const API = axios.create({
-  baseURL: "https://complaint-system-kgoq.onrender.com/api",
+  baseURL:
+    process.env.REACT_APP_API_URL || "https://complaint-system-kgoq.onrender.com/api",
 });
 // Attach JWT token to every request if present
 API.interceptors.request.use((config) => {
